@@ -1,0 +1,53 @@
+<%- include('parts/top.ejs') %>
+<!-- Page Content -->
+<div class="page-heading products-heading header-text">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+            <div class="text-content">
+            <h4>Our Complete Book Collection</h4>
+            <h2>perfect eBooks for inspiration</h2>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    
+    <div class="products">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+        </div>
+        <div class="col-md-12">
+            <div class="filters-content">
+                <div class="row grid">
+                    <%for(let book of books) {%>
+                    <div class="col-lg-4 col-md-4 all des">
+                    <div class="product-item">
+                        <a href="/books/<%- book.id%>"><img src="uploads/<%= book.image %>" alt="" style="height: 400px;"></a>
+                        <div class="down-content">
+                        <a href="/books/<%- book.id%>"><h4><%- book.title %> </h4></a>
+                        <h6>$<%- book.price %></h6>
+                        <p class="description"><%- book.description %></p>
+                        <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                        </ul>
+                        <span>Reviews </span>
+                        </div>
+                    </div>
+                    </div>
+                    <% } %>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <%- include('parts/bottom.ejs') %>

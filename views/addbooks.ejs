@@ -1,0 +1,52 @@
+<%- include('parts/top.ejs') %>
+<div style="padding-top: 100px;">
+<div class="container">
+<form method="post" action="/books/addbooks" enctype="multipart/form-data">
+<!-- Email input -->
+<div data-mdb-input-init class="form-outline mb-4">
+    <label for="title">title</label>  
+    <input type="text" id="title" name="title" class="form-control" placeholder="title" />
+    
+</div>
+
+<!-- Password input -->
+<div data-mdb-input-init class="form-outline mb-4">
+    <label for="description">description</label>
+    <textarea type="text" id="description" name="description" class="form-control" placeholder="description" > </textarea>
+    
+</div>
+<div data-mdb-input-init class="form-outline mb-4">
+    <label for="price">price</label>
+    <input type="text" id="price" name="price" class="form-control" placeholder="price" />
+    
+</div>
+<div data-mdb-input-init class="form-outline mb-4">
+    <label for="author">author</label>
+    <input type="text" id="author" name="author" class="form-control" placeholder="author" />
+    
+</div>
+<div data-mdb-input-init class="form-outline mb-4">
+    <label for="image">image</label>
+    <input type="file" id="image" name="image" accept=".jpg, .png, .jpeg" class="form-control" placeholder="image" />
+    
+</div>
+
+
+<!-- Submit button -->
+<button  type="submit" class="btn btn-primary btn-block mb-4">Add book</button>
+
+</form>
+<% if(successMessage) {%>
+    <div class="alert alert-success" role="alert">
+    <%- successMessage%>
+    </div>
+    <%}%>
+
+    <% if(errorMessage) {%>
+    <div class="alert alert-success" role="alert">
+    <%- errorMessage%>
+    </div>
+        <%}%>
+</div>
+</div>
+<%- include('parts/bottom.ejs') %>

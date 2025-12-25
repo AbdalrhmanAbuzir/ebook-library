@@ -1,0 +1,39 @@
+<%- include('parts/top.ejs') %>
+<!-- Page Content -->
+<div style="padding-top: 125px;">
+<div class="container">
+    <table class="table table-borderless">
+
+    <thead>
+        <tr>
+            <th scope="col">image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Price</th>
+            <th scope="col">action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%for(let book of books) {%>
+        
+        <tr>
+            <td ><a href="/books/<%-book.id%>"><img src="/uploads/<%- book.image %>" alt="" style="height: 100px; width: 100px;"></a></td>
+            <td><%- book.title %></td>
+            <td><%- book.author %></td>
+            <td><%- book.price %></td>
+            <td>
+                <a type="button" class="btn btn-primary" style="margin-right: 5px;" href="/books/mybooks/update/<%- book._id%>">Update</a> 
+
+                <a type="button" class="btn btn-danger" href="/books/mybooks/delete/<%- book._id%>">Delete</a>
+            </td>
+            </tr>
+    <% } %>
+    </tbody>
+    </table>
+
+</div>
+</div>
+
+    <%- include('parts/bottom.ejs') %>
+
+    

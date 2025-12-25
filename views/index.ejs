@@ -1,0 +1,96 @@
+<%- include('parts/top.ejs') %>
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+
+    
+    <div class="banner header-text">
+        <div class="owl-banner owl-carousel">
+        <div class="banner-item-01">
+            <div class="text-content">
+            <h4>Discover Your Next Favorite Book</h4>
+            <h2>Explore thousands of eBooks</h2>
+            </div>
+        </div>
+        <div class="banner-item-02">
+            <div class="text-content">
+            <h4>Read Anytime, Anywhere</h4>
+            <h2>Access to your books on any device</h2>
+            </div>
+        </div>
+        <div class="banner-item-03">
+            <div class="text-content">
+            <h4>Great Books at Great Prices</h4>
+            <h2>Enjoy exclusive discounts</h2>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Banner Ends Here -->
+
+    <div class="latest-products">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="section-heading">
+                <h2>Latest Products</h2>
+                <a href="books">view all products <i class="fa fa-angle-right"></i></a>
+            </div>
+            </div>
+            <% for(let book of books) {%>
+            <div class="col-md-4">
+            <div class="product-item">
+                <a href="/books/<%- book.id%>"><img style="height: 400px;" src="uploads/<%= book.image %>" alt=""></a>
+                <div class="down-content">
+                <a href="/books/<%- book.id%>"><h4><%- book.title %></h4></a>
+                <h6>$<%- book.price %></h6>
+                <p class="description"><%- book.description %></p>
+                <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+                <span>Reviews </span>
+                </div>
+            </div>
+            </div>
+        <%}%>
+            
+        </div>
+        </div>
+    </div>
+
+    <div class="best-features">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="section-heading">
+                <h2>About E-Book Store</h2>
+            </div>
+            </div>
+            <div class="col-md-6">
+            <div class="left-content">
+                <h4>Looking for the most interesting books ?</h4>
+                <p>Welcome to our eBook store—your digital doorway to endless stories, knowledge, and inspiration. We built this platform with a simple goal: to make reading more accessible, enjoyable, and convenient for everyone. Whether you're searching for bestselling novels, educational resources, or hidden literary gems, our curated collection offers something for every kind of reader. We’re passionate about connecting people with the books they love, anytime and anywhere. Thank you for being part of our growing community of readers—your next great read is just a click away.</p>
+                <ul class="featured-list">
+                <li>Wide selection of eBooks across all genres</li>
+                <li>Instant access to your purchased titles anytime</li>
+                <li>Affordable prices with regular discounts and offers</li>
+                <li>Easy-to-use interface for smooth browsing and reading</li>
+                <li>Secure checkout and reliable customer support</li>
+                </ul>
+                <a href="about" class="filled-button">Read More</a>
+            </div>
+            </div>
+            <div class="col-md-6">
+            <div class="right-image">
+                <img src="images/feature-image.jpg" alt="">
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <%- include('parts/bottom.ejs') %>
